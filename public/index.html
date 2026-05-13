@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshCart — Premium online grocery shopping.">
+  <title>FreshCart — Fresh Groceries, Delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="logo" id="logo-link"><span class="logo-icon">🛒</span><span class="logo-text">Fresh<span class="logo-accent">Cart</span></span></a>
+      <div class="search-bar" id="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="search-input" placeholder="Search groceries..." autocomplete="off">
+      </div>
+      <button class="cart-btn" id="cart-btn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cart-badge">0</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🌿 Farm Fresh Guarantee</div>
+      <h1>Fresh Groceries,<br><span class="hero-accent">Delivered to You</span></h1>
+      <p class="hero-subtitle">Browse our curated selection of premium produce, dairy, bakery items, and more.</p>
+      <button class="hero-cta" id="hero-cta">Start Shopping</button>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-emoji-grid">
+        <span class="hero-float" style="--delay:0s;--x:10%;--y:20%">🍎</span>
+        <span class="hero-float" style="--delay:0.5s;--x:70%;--y:10%">🥦</span>
+        <span class="hero-float" style="--delay:1s;--x:30%;--y:60%">🍞</span>
+        <span class="hero-float" style="--delay:1.5s;--x:80%;--y:50%">🧀</span>
+        <span class="hero-float" style="--delay:2s;--x:50%;--y:30%">🍓</span>
+        <span class="hero-float" style="--delay:0.3s;--x:20%;--y:80%">🥑</span>
+        <span class="hero-float" style="--delay:1.2s;--x:60%;--y:75%">🥐</span>
+        <span class="hero-float" style="--delay:0.8s;--x:90%;--y:30%">🍊</span>
+      </div>
+    </div>
+  </section>
+  <section class="categories-section" id="categories-section"><div class="container"><div class="section-header"><h2>Shop by Category</h2><p class="section-subtitle">Browse our fresh collection</p></div><div class="category-filters" id="category-filters"></div></div></section>
+  <section class="products-section" id="products-section"><div class="container"><div class="section-header"><h2 id="products-title">All Products</h2><span class="product-count" id="product-count"></span></div><div class="products-grid" id="products-grid"></div></div></section>
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-panel" id="cart-panel"><div class="cart-header"><h2>Your Cart</h2><button class="cart-close" id="cart-close" aria-label="Close cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="cart-body" id="cart-body"></div><div class="cart-footer" id="cart-footer"><div class="cart-total"><span>Total</span><span class="cart-total-amount" id="cart-total">$0.00</span></div><button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button></div></aside>
+  <div class="modal-overlay" id="checkout-overlay"><div class="modal" id="checkout-modal"><div class="modal-header"><h2>Checkout</h2><button class="modal-close" id="checkout-close" aria-label="Close checkout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="modal-body" id="checkout-body"><div class="checkout-summary" id="checkout-summary"></div><form class="checkout-form" id="checkout-form"><h3>Delivery Details</h3><div class="form-group"><label for="customer-name">Full Name</label><input type="text" id="customer-name" required placeholder="John Doe"></div><div class="form-group"><label for="customer-email">Email</label><input type="email" id="customer-email" required placeholder="john@example.com"></div><div class="form-group"><label for="customer-phone">Phone</label><input type="tel" id="customer-phone" placeholder="(555) 123-4567"></div><div class="form-group"><label for="customer-address">Delivery Address</label><textarea id="customer-address" required placeholder="123 Main St" rows="3"></textarea></div><button type="submit" class="place-order-btn" id="place-order-btn"><span class="btn-text">Place Order</span><span class="btn-loader" style="display:none"></span></button></form></div></div></div>
+  <div class="modal-overlay" id="success-overlay"><div class="modal success-modal" id="success-modal"><div class="success-content" id="success-content"></div></div></div>
+  <div class="toast-container" id="toast-container"></div>
+  <footer class="footer"><div class="container"><div class="footer-inner"><div class="footer-brand"><span class="logo-icon">🛒</span><span class="logo-text">Fresh<span class="logo-accent">Cart</span></span><p>Premium groceries delivered fresh to your door.</p></div><div class="footer-links"><h4>Quick Links</h4><a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a></div><div class="footer-links"><h4>Categories</h4><a href="#">Fruits</a><a href="#">Vegetables</a><a href="#">Dairy</a></div></div><div class="footer-bottom"><p>&copy; 2026 FreshCart. Built with 💚 by Agent Team.</p></div></div></footer>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/store.js"></script>
+  <script src="/js/checkout.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
